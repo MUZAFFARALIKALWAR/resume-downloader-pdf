@@ -1,0 +1,148 @@
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  body{
+    width: 100%;
+    height: 100%;
+    background-color: #edf0f5;
+    max-width: 1200px;
+    margin: auto;
+  }
+  header{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  #header{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  #heading{
+  margin-top: 10px;
+  font-weight: 500;
+  }
+  #description{
+    /* line-height: 17px; */
+    margin-top: 5px;
+    text-align: center;
+  }
+  @media screen and (max-width:900px) {
+    #header{
+        width: 98%;
+    }
+    #heading{
+      margin-top: 15px;
+      text-align: center;
+      font-weight: 300;
+    }
+    #description{
+        display: none;
+    }
+    /* main style */
+    .container{
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+    }
+    
+    .box{
+        margin-bottom: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .form-group{
+        display: flex;
+        flex-direction: column;
+        /* width: 100px; */
+        max-width: 80%;
+    }
+    .col{
+    
+        width: 295px;
+    }
+    
+    
+  }
+  
+  /* FORM START */
+  main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  @media screen and (min-width:900px) {
+    .container{
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        padding: 20px;
+    
+    }
+  }
+  .box{
+    margin-bottom: 25px;
+  }
+  .boxadd{
+    display: flex;
+    flex-direction: column;
+  }
+  .btn-conatiner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn-add{
+    padding: 8px 25px 8px 25px ;
+    background-color: #129ff6;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .btn-add:hover{
+    background-color: #1279f6;
+  }
+  .NAME-of-con{
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .form-group{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+  }
+  .label{
+    font-size: 17px;
+    margin-bottom: 4px;
+    padding-left: 3px;
+  }
+  .input{
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    outline: none;
+   margin-bottom: 10px;
+  }
+  
+ 
