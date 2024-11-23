@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Resume</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
+  <header  id="cv-form">
     <div id="header">
      <h2 id="heading">Build Your Professional Resume in Minutes!</h2>
     <p id="description">Create a standout, professional resume effortlessly with our Dynamic Resume Builder. Showcase your unique skills and experience to make a lasting impression on employers.</p>
     </div>
   </header>
   <!-- header complete -->
-   <main>
-      <div class="container">
+   <main id="cv-form2">
+      <div class="container1">
               <!-- left side -->
                <div>
                    <!--  Personal Information -->
@@ -24,16 +25,22 @@
                         <div class="form-group">
 
                           <label class="label" for="name">Name:</label>
-                          <input class="input" type="text" id="name" placeholder="Enter Here" autocomplete="off"/>
-
+                          <input class="input input-feild" type="text" id="name" placeholder="Enter Here" autocomplete="off" required/>
+                          
                           <label class="label" for="Contact"> Contact Number:</label>
-                          <input class="input" type="number" id="Contact" placeholder="Enter Here" autocomplete="off"/>
+                          <input class="input input-feild" type="number" id="Contact" placeholder="Enter Here" autocomplete="off"/>
 
                           <label class="label" for="email"> Email:</label>
-                          <input class="input" type="email" id="email" placeholder="Enter Here" autocomplete="off"/>
+                          <input class="input input-feild" type="email" id="email" placeholder="Enter Here" autocomplete="off"/>
+                           
+                          <label class="label" for="name">Occupation:</label>
+                          <input class="input input-feild" type="text" id="Occupation" placeholder="Enter Here" autocomplete="off"/>
 
                           <label class="label" for="address">Address:</label>
-                          <textarea rows="5" cols="5" class="input" id="address" placeholder="Enter Here" autocomplete="off"></textarea>
+                          <textarea rows="5" cols="5" class="input input-feild" id="address" placeholder="Enter Here" autocomplete="off"></textarea>
+                           
+                          <label for="imageUpload">Choose an image:</label>
+                          <input type="file" id="imageUpload" accept="image/*" />
 
                         </div> 
                      </div>
@@ -43,13 +50,12 @@
                       <div class="form-group">
 
                         <label class="label" for="linkedIn">LinkedIn:</label>
-                        <input class="input" type="text" id="linkedIn" placeholder="https://LinkedIn.com/..." autocomplete="off"/>
+                        <input class="input" type="text" id="linkfeild" placeholder="https://LinkedIn.com/..." autocomplete="off"/>
 
                         <label class="label" for="github">GitHub:</label>
-                        <input class="input" type="text" id="github" placeholder="https://github.com/..." autocomplete="off"/>
+                        <input class="input" type="text" id="gitfield" placeholder="https://github.com/..." autocomplete="off"/>
 
-                        <label class="label" for="instaragam">Instaragam:</label>
-                        <input class="input" type="text" id="instaragam" placeholder="https://Instaragam.com/..." autocomplete="off"/>
+                      
 
                       </div> 
                   </div>
@@ -58,16 +64,20 @@
                   <div class="box">
                     <div class="form-group">
                       <label class="label" for="">Objective:</label>
-                      <textarea rows="5" cols="5" class="input" id="" placeholder="Enter Here" autocomplete="off"></textarea>
+                      <textarea rows="5" cols="5" class="input" id="Objectivefeild" placeholder="Enter Here" autocomplete="off"></textarea>
                     </div> 
                  </div>
 
                  <!-- Hobbies & Interests -->
-                 <div class="box">
+                 <div class="box boxadd" id="hbs"> 
                   <div class="form-group">
                     <label class="label" for="">Hobbies & Interests:</label>
-                    <textarea rows="5" cols="5" class="input" id="" placeholder="Enter Here" autocomplete="off"></textarea>
+                    <textarea rows="5" cols="5" class="input form-control hbsfeild" id="" placeholder="Enter Here" autocomplete="off"></textarea>
                   </div> 
+                    <!-- new text area add  -->
+                    <div class="btn-conatiner" id="hnsaddbtn">
+                      <button onclick="addNewhbs()" class="btn-add">Add</button>
+                  </div>
                </div>
 
 
@@ -134,12 +144,202 @@
                           <button onclick="addNewlng()" class="btn-add">Add</button>
                       </div>
                  </div>
+                  <!-- ineternship -->
+                  <div class="box boxadd" id="intr"> 
+                    <div class="form-group">
+                      <label class="label" for="">Internship:</label>
+                      <textarea rows="5" cols="5" class="input form-control intrfeild" id="" placeholder="Enter Here" autocomplete="off"></textarea>
+                    </div> 
+                      <!-- new text area add  -->
+                      <div class="btn-conatiner" id="intraddbtn">
+                        <button onclick="addNewintr()" class="btn-add">Add</button>
+                    </div>
+                 </div>
 
                 </div>
+                
       </div>
+         <div class="genrat">
+          <button onclick="genrateCv()" id="genratebtn">Genrate CV</button>
+         </div>
     </main>
+       <!-- second form -->
+       <div id="cv-template">
+       <div class="main" >
+        
+        <div class="container">
+        
+            <!-- {/* left */} -->
+            <div class="left">
+ 
+              <!-- {/* profile div */} -->
+              <div class="profile">
+            
+              <img class="pic" id="output" alt="Your uploaded image will appear here." />
+             
+                 <!-- {/* main heading */} -->
+                 <div class="main-heading ">
+                  <h3 class="name" id="nameT">Muzaffar </h3>
+                    <p style="color: rgb(201, 198, 198); font-weight: bold; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS'" id="OccupationT">Front-end Developer</p>
+                 </div> 
+              </div>
+              <!-- {/* contact */} -->
+              <div class="contact">
+              <div class="cont-box ">
+                <i class="fa-solid fa-envelope"></i>
+              <span class="infrom" id="emailT">muzafark834@gmail.com</span>
+              </div>
+              <div class="cont-box ">
+                <i class="fa-solid fa-phone"></i>
+                <span class="infrom" id="contactT">08282717171</span>               
+               </div>
+              
+              <div class="cont-box">
+                <i class="fa-solid fa-location-dot"></i>
+              <span class="infrom" id="addressT">Karachi,Pakistan</span>
+              </div>
+              </div>
+              <!-- {/* Social */} -->
+              <div class="section">
+                  <h3>Social Links</h3>
+                  <ul>
+                      <li style="font-size: 18px;"><a href="#" id="linkfeildT" target="_blank">linkedin</a></li>
+                      <li style="font-size: 18px;"><a href="#" id="gitfieldT" target="_blank">Github</a></li>
+                     
+                     
+                  </ul>
+              </div>
+             
+              <!-- {/* Projects*/} -->
+              <div  class="section">
+                  <h3>Projects</h3>
+                  <ul id="ProjectsT">
+                      <li style="font-size: 18px;"><a href="https://e-commerce-website-muzaffar-ali.vercel.app/" >E-commerce Website</a></li>
+                     
+                  </ul>
+              </div>
+              <!-- {/* Hobbies*/} -->
+              <div  class="section" >
+               <h3>Hobbies</h3>
+                <div class="Hobbies">
+                  <ul id="hobbiesT">
+                    <li style="font-size: 18px;" >cricket</li>
+                    <li style="font-size: 18px;" >cricket</li>
+                   
+                </ul>
+                
+                </div>
+              </div>
+              <!-- {/* internship*/} -->
+              <div  class="section" >
+               <h3>Internship</h3>
+                <div class="Hobbies">
+                  <ul id="internshipT">
+                   
+                   
+                </ul>
+                
+                </div>
+              </div>
+              
+            </div>
+            <!-- {/* right */} -->
+            <div class="right">
+                    
+                <!-- {/* Objective */} -->
+                <div class="exprience ">
+                  <div class="exprience-1">
+                  <div class="exprience-2 ">
+                     <h3 class="wxp-4">Objective</h3>   
+                    </div>
+                  </div>
+                     <div class="experience-list">
+                         
+                        <p id="ObjectiveT">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident, cumque!</p>
+                       
+                       
+                     </div>
+                    
+                    
+                  </div>
+                
+              <!-- {/* EXPERIENCE */} -->
+              <div class="exprience ">
+                <div class="exprience-1">
+                <div class="exprience-2 ">
+                   <h3 class="wxp-4">Experience</h3>   
+                  </div>
+                </div>
+                   <div class="experience-list">
+                     <ul id="exprienceT">
+                      <li >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident, cumque!</li>
+                     
+                     </ul>
+                   </div>
+                  
+                  
+                </div>
+
+                 <!-- {/* Education */} -->
+              <div class="exprience ">
+                <div class="exprience-1">
+                <div class="exprience-2 ">
+                   <h3 class="wxp-4">Education</h3>   
+                  </div>
+                </div>
+                <div class="experience-list">
+                  <ul id="educationT">
+                   <li >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident, cumque!</li>
+                  
+                  </ul>
+                </div>
+                   
+                </div>
+                 <!-- {/* Skills */} -->
+              <div class="exprience ">
+                <div class="exprience-1">
+                <div class="exprience-2 ">
+                   <h3 class="wxp-4">My Skills</h3>   
+                  </div>
+                </div>
+                <div class="experience-list">
+                  <ul id="skillT">
+                   <li >javascript</li>
+                  
+                  </ul>
+                </div>
+               </div>
+                 <!-- {/* Languages */} -->
+              <div class="exprience ">
+                <div class="exprience-1">
+                <div class="exprience-2 ">
+                   <h3 class="wxp-4">Languages</h3>   
+                  </div>
+                </div>
+                <div class="experience-list">
+                  <ul id="languagesT">
+                    <li style=" font-size: 18px;" >English</li>
+                    
+                </ul>
+                </div>
+               </div>
+
+                
+                 
+              </div>
+                
+            </div>
+              <div></div>
+             <div class="con-btn">
+              <button onclick="printCV()" id="daonload">Daonwload CV</button>
+              <button onclick="editCv()" id="editbtn">Edit CV</button>
+             </div>
+
+        </div>
+              
+      </div>
+  </div>
+    
 </body>
 <script src="script.js"></script>
 </html>
-
- 
